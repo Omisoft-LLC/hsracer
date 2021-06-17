@@ -1,0 +1,140 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorButtonNormal">@color/colorPrimaryRed</item>
+    <item name="colorPrimary">@color/colorPrimaryRed</item>
+    <item name="colorPrimaryDark">@color/colorRed</item>
+    <item name="colorAccent">@color/colorPrimaryRed</item>
+  </style>
+
+  <style name="AppThemeNoBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorButtonNormal">@color/colorPrimaryRed</item>
+    <item name="colorPrimary">@color/colorPrimaryRed</item>
+    <item name="colorPrimaryDark">@color/colorRed</item>
+    <item name="colorAccent">@color/colorPrimaryRed</item>
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+
+  <style name="AppTheme.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="actionMenuTextColor">@color/colorWhite</item>
+    <item name="android:actionMenuTextColor">@color/colorWhite</item>
+    <item name="actionMenuTextAppearance">@style/CustomTitleBarTextStyle</item>
+  </style>
+
+  <style name="CustomTitleBarTextStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">20sp</item>
+    <item name="android:background">?selectableItemBackgroundBorderless</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+  </style>
+
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+  <style name="SplashTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_background</item>
+  </style>
+
+
+  <style name="style_for_textInputLayouts_in_register">
+    <item name="colorAccent">@color/colorWhite</item>
+    <item name="android:textColor">@color/colorWhite</item>
+    <item name="android:textColorHighlight">@color/colorWhite</item>
+    <item name="android:textColorHint">@color/colorWhite</item>
+    <item name="android:textColorLink">@color/colorWhite</item>
+  </style>
+
+  <style name="editTextViewsRegisterAndLogin">
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:textColor">@color/colorWhite</item>
+    <item name="android:textSize">18sp</item>
+  </style>
+
+  <style name="spinnerStyle">
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:background">@drawable/spinner_background</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">2dp</item>
+  </style>
+
+  <style name="editTextStyle">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+  </style>
+
+  <style name="inputLayoutStyle">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textColorHint">@color/colorBlack</item>
+    <item name="hintTextAppearance">@android:style/TextAppearance</item>
+  </style>
+
+  <style name="textViewLabelStyle">
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="textViewStyle">
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">4dp</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:textColor">@color/colorBlack</item>
+    <item name="android:textSize">18sp</item>
+  </style>
+
+  <style name="normalButton">
+    <item name="android:background">@drawable/rounded_buttons</item>
+    <item name="android:layout_marginTop">16dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:textColor">@color/colorWhite</item>
+  </style>
+
+  <style name="LayoutActingAsButton">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">150dp</item>
+    <item name="android:background">@drawable/layout_pressed</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:gravity">center</item>
+    <item name="android:orientation">vertical</item>
+  </style>
+
+
+  <style name="textViewInHome">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:textColor">@color/colorWhite</item>
+    <item name="android:textSize">20sp</item>
+    <item name="android:clickable">false</item>
+  </style>
+
+  <style name="raceTextViews">
+    <item name="android:fontFamily">sans-serif-condensed</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:gravity">center</item>
+    <item name="android:layout_height">0dp</item>
+    <item name="android:layout_weight">0.5</item>
+    <item name="android:textColor">@color/colorWhite</item>
+    <item name="android:textSize">18sp</item>
+  </style>
+
+
+</resources>

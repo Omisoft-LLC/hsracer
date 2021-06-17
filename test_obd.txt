@@ -1,0 +1,29 @@
+# Compile obdsim
+wget http://icculus.org/obdgpslogger/downloads/obdgpslogger-0.16.tar.gz 
+tar -zxvf obdgpslogger-0.16.tar.gz
+cd obdgpslogger-0.16
+mkdir build
+cd build
+sudo apt-get install libbluetooth-dev libfltk1.1-dev libfltk1.1 fltk1.1-doc fluid fftw3-dev libgps-dev libftdi-dev
+cmake .. 
+make obdsim
+cd ../bin/
+
+#Execute as root
+
+#Before starting edit /etc/systemd/system/dbus-org.bluez.service
+# And change exec to 
+#ExecStart=/usr/lib/bluetooth/bluetoothd --compat
+
+#Device (laptop) must be descoverable
+#All subsequent commands must be run as root
+
+#Bind  com port to channel 1, enter bluetooth mac, discover mac address  --
+sudo hcitool dev
+# Channel 1 is hardcoded in obdsim. If not available, obdsim src code must be changed
+sudo sdptool add --channel=1 SP
+
+sudo rfcomm bind 0 D0:7E:35:1B:A5:B6 1
+./obdsim -b -g gui_fltk
+
+# You can use elm327 obd terminal android app to test

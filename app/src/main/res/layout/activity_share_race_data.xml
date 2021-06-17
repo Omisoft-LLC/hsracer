@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:layout_margin="8dp"
+  tools:context="com.omisoft.hsracer.features.share.ShareRaceDataActivity">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/car_title"
+      style="@style/textViewLabelStyle"
+      android:text="@string/car_publish" />
+
+    <TextView
+      android:id="@+id/car_for_publish"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/car_alias_title"
+      style="@style/textViewLabelStyle"
+      android:text="@string/alias_publish" />
+
+    <TextView
+      android:id="@+id/car_alias_for_publish"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/position_title"
+      style="@style/textViewLabelStyle"
+      android:text="@string/position_publish" />
+
+    <TextView
+      android:id="@+id/position_for_publish"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/race_time_title"
+      style="@style/textViewLabelStyle"
+      android:text="@string/race_time_publish" />
+
+    <TextView
+      android:id="@+id/race_time_for_publish"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/max_speed_title"
+      style="@style/textViewLabelStyle"
+      android:text="@string/max_speed_publish" />
+
+    <TextView
+      android:id="@+id/max_speed_for_publish"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/avg_speed_title"
+      style="@style/textViewLabelStyle"
+      android:text="@string/avg_speed_publish" />
+
+    <TextView
+      android:id="@+id/avg_speed_for_publish"
+      style="@style/textViewStyle" />
+
+
+    <CheckBox
+      android:id="@+id/share_to_fb"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:checked="true"
+      android:fontFamily="sans-serif-condensed"
+      android:text="@string/share_to_facebook" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+      <Button
+        android:id="@+id/button_home"
+        style="@style/normalButton"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="8dp"
+        android:onClick="goToHome"
+        android:text="@string/return_home" />
+
+      <Button
+        android:id="@+id/button_share"
+        style="@style/normalButton"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="8dp"
+        android:onClick="buttonShareClick"
+        android:text="@string/share" />
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+</ScrollView>

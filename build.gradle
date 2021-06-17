@@ -1,0 +1,85 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url "https://maven.google.com"
+        }
+        maven { url "https://jitpack.io" }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "io.franzbecker:gradle-lombok:1.8"
+        classpath 'com.google.gms:google-services:3.1.1'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.8.2'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            name 'Google'
+            url 'https://maven.google.com'
+        }
+        maven {
+            name 'Gradle Plugins'
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            name 'Jitpack'
+            url "https://jitpack.io"
+        }
+
+        mavenCentral()
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+//task delombok(type: DelombokTask, dependsOn: compileJava) {
+//    ext.outputDir = file("$buildDir/delombok")
+//    outputs.dir(outputDir)
+//    sourceSets.main.java.srcDirs.each {
+//        inputs.dir(it)
+//        args(it, "-d", outputDir)
+//    }
+//}
+//
+//task delombokHelp(type: DelombokTask) {
+//    args "--help"
+//}
+// Optional: configure the versioner
+ext.gitVersioner = [
+        defaultBranch           : "master",  // default "master"
+        stableBranches          : [], // default [], the feature branch postfix (-dm4(6)) will not be appended on stable branches, all commits are included into the version number calculation
+        yearFactor              : 1000,      // default "1000", increasing every 8.57h
+        snapshotEnabled         : false,      // default false, the "-SNAPSHOT" postfix
+        localChangesCountEnabled: true,       // default false, the (<commitCount>) before -SNAPSHOT
+        shortName               : { gitVersion ->            // optional closure to build a short name
+            // allows you to add your own short name logic
+            // All properties from gitVersion are available
+            // can be used for CI `System.getenv("BUILD_NUMBER")`
+
+            // i.e. use short sha1
+            return gitVersion.commit.subSequence(0, 7)
+        }
+]
+apply from: 'git-versioner.gradle'
+println("versionName: $gitVersionName")
+
+static def getBuildDate() {
+    new Date().format('yyyy-MM-dd HH:mm:ss')
+}
+
+ext.build_date = "Build Date:" + getBuildDate()
+ext.build_number = "Build Ver:" + "$gitVersion"

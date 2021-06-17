@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <TextView
+    android:id="@+id/warning_upload_message"
+    style="@style/styleForAlertDialogTextViews"
+    android:fontFamily="sans-serif-condensed"
+    android:text="@string/upload_video_message_warning" />
+
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:layout_below="@id/warning_upload_message"
+    android:onClick="uploadCancel"
+    android:text="@string/cancel"
+    android:textColor="@color/colorRed" />
+
+  <TextView
+    android:id="@+id/dialog_video_upload_later"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_below="@id/warning_upload_message"
+    android:onClick="uploadNow"
+    android:text="@string/upload_now"
+    android:textColor="@color/colorRed" />
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/title_bar"
+  android:layout_width="match_parent"
+  android:layout_height="24dp"
+  android:background="@color/colorBlack"
+  android:clickable="true"
+  android:gravity="center"
+  android:onClick="showAndHideTitle"
+  android:orientation="horizontal"
+  android:focusable="true">
+
+
+  <ImageView
+    android:id="@+id/icon_title_race_net"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:layout_margin="2dp"
+    android:layout_alignParentRight="true"
+    android:contentDescription="@string/wifi"
+    android:visibility="invisible"
+    app:srcCompat="@drawable/ic_wifi_white_18px" />
+
+  <ImageView
+    android:contentDescription="@string/sensorForCamera"
+    android:id="@+id/icon_title_race_camera"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:layout_margin="2dp"
+    android:layout_toLeftOf="@id/icon_title_race_net"
+    android:layout_toStartOf="@id/icon_title_race_net"
+    android:visibility="invisible"
+    app:srcCompat="@drawable/ic_video_cam_white_18px" />
+
+  <ImageView
+    android:contentDescription="@string/sensorForGPS"
+    android:id="@+id/icon_title_race_gps"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:layout_margin="2dp"
+    android:layout_toLeftOf="@id/icon_title_race_camera"
+    android:layout_toStartOf="@id/icon_title_race_camera"
+    android:visibility="invisible"
+    app:srcCompat="@drawable/ic_gps_fixed_white_18px" />
+
+  <ImageView
+    android:contentDescription="@string/sensorForOBD"
+    android:id="@+id/icon_title_race_obd"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:layout_margin="2dp"
+    android:layout_toLeftOf="@id/icon_title_race_gps"
+    android:layout_toStartOf="@id/icon_title_race_gps"
+    android:background="@drawable/ic_engine_outline"
+    android:visibility="invisible" />
+
+  <TextView
+    android:id="@+id/race_status_messages"
+    android:layout_width="match_parent"
+    android:layout_height="24dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_toLeftOf="@id/icon_title_race_obd"
+    android:layout_toStartOf="@id/icon_title_race_obd"
+    android:ellipsize="end"
+    android:fontFamily="sans-serif-condensed"
+    android:gravity="left|center_vertical"
+    android:maxLines="1"
+    android:textColor="@color/colorWhite" />
+
+</RelativeLayout>

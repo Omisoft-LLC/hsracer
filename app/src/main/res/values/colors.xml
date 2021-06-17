@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorBlack">#000000</color>
+  <color name="colorWhite">#FFFFFF</color>
+  <color name="colorRed">#FF0000</color>
+  <color name="colorGrayTransparent">#33808080</color>
+  <color name="colorSlightGray">#33BDBDBD</color>
+  <color name="colorGraySolid">#E0E0E0</color>
+  <color name="colorTransparent">#00FFFFFF</color>
+  <color name="colorDefaultActivityColor">#FAFAFA</color>
+
+  <color name="colorPrimaryRed">#F44336</color>
+  <color name="colorPaleBlue">#2196F3</color>
+  <color name="colorButtonPressed">#DA3935</color>
+  <color name="colorButtonReleased">#E53935</color>
+  <color name="colorButtonShadowPressed">#81616161</color>
+  <color name="colorHomeButtonShadowPressed">#3F616161</color>
+  <color name="colorProgressOverlayBackground">#8F000000</color>
+  <color name="colorGreen">#008010</color>
+  <color name="colorPurple">#7E0B80</color>
+  <color name="colorPink">#FF0080</color>
+  <color name="colorYellow">#FFFF00</color>
+  <color name="colorDarkBlue">#0000FF</color>
+</resources>

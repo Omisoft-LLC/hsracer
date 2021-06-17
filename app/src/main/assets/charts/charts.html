@@ -1,0 +1,42 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+   if (typeof Android != "undefined"){ // check the bridge
+      if (Android.getPosStat!= "undefined") { // check the method
+        var data =  JSON.parse(Android.getPosStat());
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var transformedData = google.visualization.arrayToDataTable([
+          ['Position', 'Number of places'],
+          ['1st',     data._1],
+          ['2nd',      data._2],
+          ['3rd',  data._3],
+          ['4th', data._4],
+          ['5th',    data._5],
+          ['6th',    data._6],
+          ['7th',    data._7],
+          ['8th',    data._8]
+        ]);
+
+        var options = {
+          title: 'Race Positions', 'width':300, 'height':300
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(transformedData, options);
+      }
+      }
+      }
+
+
+  </script>
+</head>
+<body style="background-color: #FAFAFA">
+<div id="piechart" style="width: 300px; height: 300px; margin-left: auto; margin-right: auto"></div>
+</body>
+</html>

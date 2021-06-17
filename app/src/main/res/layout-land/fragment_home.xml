@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@xml/background"
+  android:orientation="vertical"
+  tools:context="com.omisoft.hsracer.features.home.HomeFragment">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+
+    <LinearLayout
+      android:id="@+id/create_race_home_btn"
+      style="@style/LayoutActingAsButton"
+      android:onClick="createRaceHomeBtnOnClickListener"
+      tools:ignore="OnClick,UseCompoundDrawables">
+
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/create_race"
+        app:srcCompat="@drawable/ic_trophy_variant" />
+
+      <TextView
+        style="@style/textViewInHome"
+
+        android:text="@string/create_race" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/join_race_home_btn"
+      style="@style/LayoutActingAsButton"
+      android:onClick="joinRaceHomeBtnOnClickListener"
+      tools:ignore="OnClick,UseCompoundDrawables">
+
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/join_race"
+        app:srcCompat="@drawable/ic_account_multiple_plus" />
+
+      <TextView
+        style="@style/textViewInHome"
+        android:text="@string/join_race" />
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+
+    <LinearLayout
+      android:id="@+id/results_btn"
+      style="@style/LayoutActingAsButton"
+      android:onClick="resultsBtnOnClickListener"
+      tools:ignore="OnClick,UseCompoundDrawables">
+
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/see_results"
+        app:srcCompat="@drawable/ic_chart_bar" />
+
+      <TextView
+        style="@style/textViewInHome"
+        android:text="@string/see_results" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/stream_btn"
+      style="@style/LayoutActingAsButton"
+      android:onClick="streamingBtnOnClickListener"
+      tools:ignore="OnClick,UseCompoundDrawables">
+
+      <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/view_streams"
+        app:srcCompat="@drawable/ic_view_stream" />
+
+      <TextView
+        style="@style/textViewInHome"
+        android:text="@string/view_streams" />
+    </LinearLayout>
+
+  </LinearLayout>
+</LinearLayout>
+

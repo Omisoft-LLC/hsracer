@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="pref_metric_key" translatable="false">metric-key</string>
+  <string name="pref_obd_devices_key" translatable="false">obd-devices-key</string>
+  <string name="pref_obd_enable_key" translatable="false">obd-enable-key</string>
+  <string name="pref_resolution_key" translatable="false">resolution-key</string>
+  <string name="temperature_scale_key" translatable="false">temperature-scale-key</string>
+
+</resources>

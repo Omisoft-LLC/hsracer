@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Drawer -->
+  <string-array name="navigation">
+    <item>Home</item>
+    <item>Profile</item>
+    <item>Cars</item>
+    <item>Find a racer</item>
+    <item>Settings</item>
+    <item>Log out</item>
+  </string-array>
+  <!-- Fuel types -->
+  <string-array translatable="false" name="fuel_types">
+    <item>PETROL</item>
+    <item>DIESEL</item>
+    <item>LPG</item>
+  </string-array>
+  <!-- Race types -->
+  <string-array name="race_types">
+    <item>Drag</item>
+    <item>Top Speed</item>
+    <item>Cannonball</item>
+  </string-array>
+
+  <string-array name="metric_system_entries">
+    <item>Metric</item>
+    <item>Imperial</item>
+  </string-array>
+
+  <string-array name="metric_system_values">
+    <item>Metric</item>
+    <item>Imperial</item>
+  </string-array>
+
+  <string-array name="temperature_scale_entries">
+    <item>Celsius</item>
+    <item>Fahrenheit</item>
+  </string-array>
+
+  <string-array name="temperature_scale_values">
+    <item>Celsius</item>
+    <item>Fahrenheit</item>
+  </string-array>
+
+  <string-array translatable="false" name="empty_array">
+
+  </string-array>
+
+</resources>

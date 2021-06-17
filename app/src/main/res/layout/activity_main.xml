@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingBottom="16dp"
+  android:paddingLeft="16dp"
+  android:paddingRight="16dp"
+  android:fitsSystemWindows="true"
+  android:gravity="center_vertical"
+  android:orientation="vertical"
+  tools:context="com.omisoft.hsracer.features.MainActivity">
+
+  <TextView
+    android:id="@+id/disclaimer_view"
+    style="@style/textViewStyle"
+    android:textStyle="bold"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:onClick="viewTerms"
+    android:textColor="@color/colorBlack" />
+  <Button
+    android:id="@+id/agree_disclaimer_button"
+    style="@style/normalButton"
+    android:background="@drawable/rounded_buttons"
+    android:layout_width="match_parent"
+    android:onClick="agreeToDisclaimer"
+    android:text="@string/agree" />
+
+  <TextView
+    android:id="@+id/legal_note"
+    style="@style/textViewStyle"
+    android:textStyle="bold"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:focusable="true"
+    android:gravity="center"
+    android:textColor="@color/colorBlack"
+    android:singleLine="true"
+    android:ellipsize="marquee"
+    android:marqueeRepeatLimit="marquee_forever"
+    android:scrollHorizontally="true"
+    android:focusableInTouchMode="true"
+    android:text="@string/legal_note" />
+
+</LinearLayout>

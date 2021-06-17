@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+
+  <LinearLayout
+    android:id="@+id/background_panel"
+    android:layout_width="match_parent"
+    android:layout_height="53dp"
+    android:background="@color/colorRed">
+
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="18dp"
+      android:layout_marginLeft="18dp"
+      android:layout_gravity="center_vertical"
+      android:fontFamily="sans-serif-condensed"
+      android:text="@string/remove"
+      android:textColor="@color/colorWhite" />
+  </LinearLayout>
+
+  <RelativeLayout
+    android:id="@+id/front_panel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+    <TextView
+      android:id="@+id/racer_nickname_in_creator"
+      android:layout_width="wrap_content"
+      android:layout_height="28dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginLeft="4dp"
+      android:layout_marginRight="4dp"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentStart="true"
+      android:ellipsize="end"
+      android:fontFamily="sans-serif-condensed"
+      android:gravity="center_vertical"
+      android:maxLines="1"
+      android:textSize="22sp" />
+
+    <TextView
+      android:id="@+id/racer_car_name_in_creator"
+      android:layout_width="wrap_content"
+      android:layout_height="28dp"
+      android:layout_marginTop="4dp"
+      android:layout_marginLeft="4dp"
+      android:layout_toEndOf="@id/racer_nickname_in_creator"
+      android:layout_toRightOf="@id/racer_nickname_in_creator"
+      android:ellipsize="end"
+      android:fontFamily="sans-serif-condensed"
+      android:maxLines="1"
+      android:textSize="22sp" />
+
+    <ImageView
+      android:id="@+id/status_image"
+      android:layout_width="18dp"
+      android:layout_height="18dp"
+      android:layout_marginTop="2dp"
+      android:layout_marginLeft="4dp"
+      android:layout_below="@id/racer_nickname_in_creator"
+      android:contentDescription="@string/status_description" />
+
+    <TextView
+      android:id="@+id/status_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="2dp"
+      android:layout_marginLeft="2dp"
+      android:layout_alignBottom="@id/status_image"
+      android:layout_toEndOf="@id/status_image"
+      android:layout_toRightOf="@id/status_image"
+      android:fontFamily="sans-serif-condensed"
+      android:gravity="center"
+      android:text="@string/ready" />
+
+    <View
+      android:id="@+id/grayLine"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="1dp"
+      android:layout_below="@id/status_text"
+      android:background="@color/colorGrayTransparent" />
+  </RelativeLayout>
+</RelativeLayout>

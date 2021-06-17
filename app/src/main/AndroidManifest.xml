@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.omisoft.hsracer">
+
+  <uses-sdk android:maxSdkVersion="26" />
+
+  <!--
+       Set color used with incoming notification messages. This is used when no color is set for the incoming
+       notification message. See README(https://goo.gl/6BKBk7) for more.
+    -->
+
+
+  <!-- To auto-complete the email text field in the login form with the user's emails -->
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+  <uses-permission android:name="android.permission.READ_PROFILE" />
+  <uses-permission android:name="android.permission.READ_CONTACTS" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
+  <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+  <uses-feature android:name="android.hardware.camera.autofocus" />
+  <uses-feature
+    android:name="android.hardware.camera"
+    android:required="false" />
+  <uses-feature
+    android:name="android.hardware.bluetooth"
+    android:required="false" />
+  <uses-feature
+    android:name="android.hardware.location"
+    android:required="false" />
+
+  <supports-screens
+    android:largeScreens="true"
+    android:normalScreens="true"
+    android:smallScreens="true"
+    android:xlargeScreens="true" />
+
+  <application
+    android:allowBackup="false"
+    android:fullBackupContent="@xml/backup_rules"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:name=".common.BaseApp"
+    android:networkSecurityConfig="@xml/network_security_config"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    tools:targetApi="n">
+    <meta-data
+      android:name="asset_statements"
+      android:resource="@string/asset_statements" />
+    <meta-data
+      android:name="com.google.android.nearby.messages.API_KEY"
+      android:value="AIzaSyCsY6NXhXvJq6VYoznQZC7xfHS858yzKOo" />
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_color"
+      android:resource="@color/colorWhite" />
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_icon"
+      android:resource="@drawable/ic_stat_name" />
+    <!-- Activities -->
+
+    <activity
+      android:name=".features.SplashActivity"
+      android:noHistory="true"
+      android:theme="@style/SplashTheme">
+      <intent-filter android:label="@string/app_name">
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.MONKEY" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:label="@string/app_name"
+      android:name=".features.MainActivity"
+      android:noHistory="true"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppThemeNoBar">
+      <intent-filter>
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+          android:host="hsracer.com"
+          android:pathPrefix="/profile"
+          android:scheme="https" />
+        <data
+          android:host="hsracer.com"
+          android:pathPrefix="/race"
+          android:scheme="https" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:label="@string/login_title"
+      android:launchMode="singleTask"
+      android:name=".features.login.LoginActivity"
+      android:theme="@style/AppThemeNoBar">
+      <intent-filter android:label="@string/app_name">
+        <action android:name="android.intent.action.VIEW" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+          android:host="hsracer.com"
+          android:path="/sign/in"
+          android:scheme="https" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:label="Register"
+      android:name=".features.register.RegisterActivity"
+      android:parentActivityName=".features.login.LoginActivity"
+      android:theme="@style/AppThemeNoBar"
+      android:windowSoftInputMode="stateHidden">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+          android:host="hsracer.com"
+          android:path="/sign/up"
+          android:scheme="https" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:name=".features.home.HomeActivity"
+      android:theme="@style/AppThemeNoBar" />
+    <activity
+      android:label="Results"
+      android:name=".features.results.ResultsActivity"
+      android:parentActivityName=".features.home.HomeActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.NoActionBar" />
+    <activity
+      android:name=".features.results.ResultDetailsActivity"
+      android:parentActivityName=".features.results.ResultsActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.NoActionBar" />
+    <activity
+      android:label="Profile"
+      android:name=".features.profile.ProfileActivity"
+      android:parentActivityName=".features.home.HomeActivity"
+      android:theme="@style/AppTheme"
+      android:windowSoftInputMode="stateHidden" />
+    <activity
+      android:label="Your cars"
+      android:name=".features.profile.CarsActivity"
+      android:parentActivityName=".features.home.HomeActivity"
+      android:theme="@style/AppTheme" />
+    <activity
+      android:label="@string/add_car_to_profile"
+      android:name=".features.profile.SaveCarToProfileActivity"
+      android:parentActivityName=".features.profile.CarsActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme"
+      android:windowSoftInputMode="stateHidden" />
+    <activity
+      android:name=".features.profile.DetailsCarActivity"
+      android:parentActivityName=".features.profile.CarsActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.NoActionBar" />
+    <activity
+      android:name=".features.profile.EditCarInfoActivity"
+      android:parentActivityName=".features.profile.DetailsCarActivity"
+      android:theme="@style/AppTheme.NoActionBar" />
+    <activity
+      android:configChanges="orientation|screenSize"
+      android:name=".features.race.RaceActivity"
+      android:screenOrientation="landscape"
+      android:theme="@style/AppThemeNoBar" />
+    <activity
+      android:label="Create race"
+      android:name=".features.race.CreateRaceActivity"
+      android:parentActivityName=".features.home.HomeActivity"
+      android:theme="@style/AppTheme"
+      android:windowSoftInputMode="stateHidden" />
+    <activity
+      android:name=".features.race.CannonballMapActivity"
+      android:theme="@style/AppTheme.NoActionBar"
+      android:windowSoftInputMode="stateHidden" />
+    <activity
+      android:label="Join race"
+      android:name=".features.race.JoinRaceActivity"
+      android:parentActivityName=".features.home.HomeActivity"
+      android:theme="@style/AppTheme"
+      android:windowSoftInputMode="stateHidden" />
+    <activity
+      android:label="Race details"
+      android:name=".features.race.PreRaceSummaryActivity"
+      android:parentActivityName=".features.race.CreateRaceActivity"
+      android:theme="@style/AppTheme" />
+    <activity
+      android:label="Race results"
+      android:name=".features.race.RaceSummaryActivity"
+      android:screenOrientation="landscape"
+      android:theme="@style/AppTheme" />
+    <activity
+      android:label="Settings"
+      android:name=".features.settings.SettingsActivity"
+      android:parentActivityName=".features.home.HomeActivity"
+      android:theme="@style/AppTheme" />
+    <activity
+      android:label="@string/title_activity_buddy_finder"
+      android:name=".features.buddyfinder.features.BuddyFinderActivity"
+      android:theme="@style/AppThemeNoBar" />
+    <activity
+      android:name=".common.ErrorActivity"
+      android:process=":report_process"
+      android:theme="@style/AppTheme">
+      <intent-filter>
+        <action android:name="com.omisoft.hsracer.common.ErrorActivity" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:label="@string/upload_video"
+      android:name=".features.share.UploadVideoActivity" />
+    <activity
+      android:label="@string/share_race_title"
+      android:launchMode="singleTask"
+      android:name=".features.share.ShareRaceDataActivity"
+      android:theme="@style/AppTheme" />
+    <activity
+      android:label="@string/title_activity_upload_video"
+      android:name=".features.share.UploadVideoGalleryActivity">
+      <intent-filter android:label="@string/app_name">
+        <action android:name="android.intent.action.SEND" />
+
+        <data android:mimeType="video/mp4" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".debug.stream.StreamActivity" />
+    <activity
+      android:name=".features.streams.ListLiveStreamsActivity"
+      android:parentActivityName=".features.home.HomeActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/AppTheme.NoActionBar" />
+    <activity
+      android:name=".features.streams.StreamDetailsActivity"
+      android:parentActivityName=".features.streams.ListLiveStreamsActivity"
+      android:theme="@style/AppTheme.NoActionBar" />
+    <!-- Services -->
+
+    <service
+      android:enabled="true"
+      android:exported="false"
+      android:name=".services.RaceService"
+      android:stopWithTask="true" />
+    <service
+      android:exported="false"
+      android:name=".services.FirebaseMsgService"
+      android:stopWithTask="false">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+    <service
+      android:exported="false"
+      android:name=".services.FirebaseIDService"
+      android:stopWithTask="false">
+      <intent-filter>
+        <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+      </intent-filter>
+    </service>
+    <service
+      android:enabled="true"
+      android:exported="false"
+      android:name=".services.UploadVideoService"
+      android:process=":hsracerUploadProcess"
+      android:stopWithTask="false" />
+
+  </application>
+
+
+</manifest>

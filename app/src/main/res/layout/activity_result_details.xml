@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:id="@+id/result_details_panel1"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="@drawable/drawer_background">
+
+    <TextView
+      android:id="@+id/result_details_name"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="48dp"
+      android:layout_marginLeft="16dp"
+      android:layout_alignParentBottom="true"
+      android:ellipsize="end"
+      android:ems="11"
+      android:fontFamily="sans-serif-condensed"
+      android:maxLines="1"
+      android:textColor="@color/colorWhite"
+      android:textSize="22sp"
+      android:transitionName="@string/transition_name"
+      tools:targetApi="lollipop" />
+
+    <TextView
+      android:id="@+id/details_finish_position"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="24dp"
+      android:layout_marginLeft="16dp"
+      android:layout_alignParentBottom="true"
+      android:fontFamily="sans-serif-condensed"
+      android:textColor="@color/colorWhite"
+      android:textSize="16sp"
+      android:transitionName="@string/transition_race_place"
+      tools:targetApi="lollipop" />
+
+
+  </RelativeLayout>
+
+  <android.support.v7.widget.Toolbar
+    android:id="@+id/result_details_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTransparent"
+    android:minHeight="?attr/actionBarSize" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_below="@+id/result_details_panel1"
+    android:orientation="vertical">
+
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/result_details_description" />
+
+    <TextView
+      android:id="@+id/result_details_description"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="6dp"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/result_details_date" />
+
+    <TextView
+      android:id="@+id/result_details_date"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="6dp"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/result_details_type" />
+
+    <TextView
+      android:id="@+id/result_details_type"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="6dp"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/result_details_time" />
+
+    <TextView
+      android:id="@+id/result_details_time"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="6dp"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/result_details__max_speed" />
+
+    <TextView
+      android:id="@+id/result_details_max_speed"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="6dp"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/result_details_distance" />
+
+    <TextView
+      android:id="@+id/result_details_max_distance"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="6dp"
+      android:textColor="@color/colorBlack"
+      android:textSize="18sp" />
+  </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/colorDefaultActivityColor"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorSlightGray"
+    android:minHeight="?attr/actionBarSize"
+    android:orientation="horizontal">
+
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="?selectableItemBackgroundBorderless"
+      android:clickable="true"
+      android:onClick="returnToCarDetails"
+      android:focusable="true"
+      android:gravity="center"
+      android:text="@string/cancel_caps"
+      android:textColor="@color/colorPrimaryRed" />
+
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="?selectableItemBackgroundBorderless"
+      android:clickable="true"
+      android:focusable="true"
+      android:onClick="updateInfoAboutCar"
+      android:gravity="center"
+      android:text="@string/save_caps"
+      android:textColor="@color/colorPrimaryRed" />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+      style="@style/textViewStyle"
+      android:text="@string/select_car_year" />
+
+    <Spinner
+      android:id="@+id/year_car_edit"
+      style="@style/spinnerStyle" />
+
+    <TextView
+      style="@style/textViewStyle"
+      android:text="@string/car_engine_cylinders" />
+
+    <Spinner
+      android:id="@+id/engine_cylinders_car_edit"
+      style="@style/spinnerStyle" />
+
+    <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+      <EditText
+        android:id="@+id/engine_volume_car_edit"
+        style="@style/editTextStyle"
+        android:hint="@string/car_engine_volume"
+        android:inputType="number" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+      <EditText
+        android:id="@+id/bhp_car_edit"
+        style="@style/editTextStyle"
+        android:hint="@string/car_bhp"
+        android:inputType="number" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView
+      style="@style/textViewStyle"
+      android:text="@string/select_car_fuel" />
+
+    <Spinner
+      android:id="@+id/fuel_types_spinner_edit"
+      style="@style/spinnerStyle" />
+  </LinearLayout>
+</LinearLayout>

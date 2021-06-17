@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_marginTop="16dp"
+  android:orientation="vertical"
+  tools:context="com.omisoft.hsracer.features.race.fragments.createrace.CannonballFragment">
+  <android.support.design.widget.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColorHint="@color/colorBlack"
+    app:hintTextAppearance="@android:style/TextAppearance">
+
+    <EditText
+      android:id="@+id/et_show_cannonbal_location_create_race"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:enabled="false"
+      android:fontFamily="sans-serif-condensed"
+      android:hint="@string/choose_destination"
+      android:text=" "
+      android:textColor="@color/colorBlack"
+      tools:ignore="HardcodedText" />
+
+  </android.support.design.widget.TextInputLayout>
+
+  <ImageButton
+    android:id="@+id/select_cannonball_btn"
+    android:layout_width="42dp"
+    android:layout_height="42dp"
+    android:layout_marginRight="4dp"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:background="@color/colorDefaultActivityColor"
+    android:contentDescription="@string/create_race"
+    app:srcCompat="@drawable/ic_magnify" />
+</RelativeLayout>

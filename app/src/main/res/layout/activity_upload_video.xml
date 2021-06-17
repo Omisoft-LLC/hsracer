@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="8dp"
+  android:layout_gravity="center_vertical"
+  android:orientation="vertical"
+  tools:context=".features.share.UploadVideoActivity">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="5"
+    android:orientation="vertical">
+
+    <VideoView
+      android:id="@+id/show_video"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:foregroundGravity="center_vertical" />
+  </LinearLayout>
+
+
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_view_videos"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="4"
+    android:layout_marginTop="8dp" />
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp">
+
+    <Button
+      android:id="@+id/button_upload_to_home"
+      style="@style/normalButton"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_marginRight="8dp"
+      android:onClick="buttonNavigateToHome"
+      android:text="@string/return_home" />
+
+    <Button
+      android:id="@+id/button_share_video"
+      style="@style/normalButton"
+      android:layout_width="0dp"
+      android:layout_weight="1"
+      android:layout_marginLeft="8dp"
+      android:onClick="buttonShareVideo"
+      android:text="@string/upload" />
+
+  </LinearLayout>
+</LinearLayout>

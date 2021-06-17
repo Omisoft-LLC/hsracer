@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/ll_item_for_result"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingLeft="16dp"
+  android:paddingRight="16dp"
+  android:background="@drawable/layout_pressed"
+  android:clickable="true"
+  android:focusable="true">
+
+  <TextView
+    android:id="@+id/date_result_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_alignParentRight="true"
+    android:fontFamily="sans-serif-condensed" />
+
+  <TextView
+    android:id="@+id/race_name_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_alignParentLeft="true"
+    android:layout_toLeftOf="@id/date_result_text_view"
+    android:ellipsize="end"
+    android:fontFamily="sans-serif-condensed"
+    android:maxLines="1"
+    android:textSize="20sp"
+    android:transitionName="@string/transition_name"
+    tools:targetApi="lollipop" />
+
+
+  <TextView
+    android:id="@+id/position_result_text_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@id/race_name_text_view"
+    android:transitionName="@string/transition_race_place"
+    tools:targetApi="lollipop" />
+
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginTop="1dp"
+    android:layout_below="@+id/position_result_text_view"
+    android:background="@color/colorGrayTransparent"
+    android:fontFamily="sans-serif-condensed" />
+
+</RelativeLayout>

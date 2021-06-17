@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Drawer -->
+  <string-array name="navigation">
+    <item>Начало</item>
+    <item>Профил</item>
+    <item>Автомобили</item>
+    <item>Намери състезател</item>
+    <item>Настройки</item>
+    <item>Изход</item>
+  </string-array>
+
+  <!-- Race types -->
+  <string-array name="race_types">
+    <item>Драг</item>
+    <item>Макс. скорост</item>
+    <item>Точко до точка</item>
+  </string-array>
+
+  <string-array name="metric_system_entries">
+    <item>Метрична</item>
+    <item>Имперска</item>
+  </string-array>
+
+  <string-array name="metric_system_values">
+    <item>Метрична</item>
+    <item>Имперска</item>
+  </string-array>
+
+  <string-array name="temperature_scale_entries">
+    <item>Целзий</item>
+    <item>Фаренхайт</item>
+  </string-array>
+
+  <string-array name="temperature_scale_values">
+    <item>Целзий</item>
+    <item>Фаренхайт</item>
+  </string-array>
+
+
+</resources>

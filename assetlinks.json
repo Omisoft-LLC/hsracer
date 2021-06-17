@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.omisoft.hsracer",
+      "sha256_cert_fingerprints": [
+        "D0:58:EC:5B:48:F4:A4:E0:F3:DA:6C:E0:66:3B:A5:47:AF:C6:D8:F1:88:32:6B:EF:9A:B0:A8:7C:8D:A9:F1:6B"
+      ]
+    }
+  }
+]

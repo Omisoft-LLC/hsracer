@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.omisoft.hsracer.features.race.CannonballMapActivity">
+
+  <org.osmdroid.views.MapView
+    android:id="@+id/cannonballMap"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+  <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@color/colorTransparent">
+
+    <EditText
+      android:id="@+id/destinationAddress"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:paddingLeft="4dp"
+      android:background="@drawable/round_text_views"
+      android:fontFamily="sans-serif-condensed"
+      android:gravity="center_vertical"
+      android:hint="@string/enter_destination"
+      android:imeOptions="actionSearch"
+      android:inputType="text"
+      android:labelFor="@+id/destinationAddress">
+      <requestFocus />
+    </EditText>
+
+    <ImageButton
+      android:id="@+id/ib_search_location"
+      android:layout_width="40dp"
+      android:onClick="searchLocation"
+      android:layout_height="40dp"
+      android:layout_alignParentRight="true"
+      android:background="@drawable/round_image_buttons"
+      android:contentDescription="@string/enter_destination"
+      app:srcCompat="@drawable/ic_magnify" />
+    <Button
+      android:id="@+id/set_destination_btn"
+      style="@style/normalButton"
+      android:layout_width="wrap_content"
+      android:layout_below="@id/destinationAddress"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/rounded_buttons"
+      android:text="@string/set_destination" />
+
+  </RelativeLayout>
+
+</RelativeLayout>

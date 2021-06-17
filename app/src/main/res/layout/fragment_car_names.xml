@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/fragment_car_name_root"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/layout_pressed">
+
+  <ImageButton
+    android:id="@+id/ib_delete_vehicle_in_cars"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:background="@drawable/layout_pressed"
+    app:srcCompat="@drawable/ic_delete"
+    tools:ignore="ContentDescription" />
+
+  <TextView
+    android:id="@+id/car_name_in_cars"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="4dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_toLeftOf="@id/ib_delete_vehicle_in_cars"
+    android:layout_toStartOf="@id/ib_delete_vehicle_in_cars"
+    android:ellipsize="end"
+    android:fontFamily="sans-serif-condensed"
+    android:gravity="center_vertical"
+    android:maxLines="1"
+    android:textSize="22sp"
+    android:transitionName="@string/transition_car_name"
+    tools:targetApi="lollipop" />
+
+  <TextView
+    android:id="@+id/make_name_and_model_in_cars"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_below="@id/car_name_in_cars"
+    android:layout_toLeftOf="@id/ib_delete_vehicle_in_cars"
+    android:layout_toStartOf="@id/ib_delete_vehicle_in_cars"
+    android:ellipsize="end"
+    android:fontFamily="sans-serif-condensed"
+    android:maxLines="1"
+    android:textSize="18sp"
+    android:transitionName="@string/transition_make_and_model"
+    tools:targetApi="lollipop" />
+
+  <View
+    android:id="@+id/grayLine"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginTop="1dp"
+    android:layout_below="@id/make_name_and_model_in_cars"
+    android:background="@color/colorGrayTransparent" />
+
+</RelativeLayout>

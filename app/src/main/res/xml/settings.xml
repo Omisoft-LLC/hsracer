@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+
+  <PreferenceCategory android:title="@string/video">
+
+    <ListPreference
+      android:id="@+id/resolution_preference"
+      android:key="@string/pref_resolution_key"
+      android:fontFamily="sans-serif-condensed"
+      android:title="@string/resolution_title"
+      android:entries="@array/empty_array"
+      android:entryValues="@array/empty_array"
+      android:dialogTitle="@string/resolution_dialog_title" />
+
+  </PreferenceCategory>
+
+  <PreferenceCategory android:title="@string/obd_settings">
+
+    <CheckBoxPreference
+      android:id="@+id/obd_preference"
+      android:defaultValue="false"
+      android:fontFamily="sans-serif-condensed"
+      android:key="@string/pref_obd_enable_key"
+      android:summaryOff="@string/obd_summary_off"
+      android:summaryOn="@string/obd_summary_on"
+      android:title="@string/obd_title" />
+
+    <ListPreference
+      android:id="@+id/adapter_preference"
+      android:key="@string/pref_obd_devices_key"
+      android:fontFamily="sans-serif-condensed"
+      android:title="@string/obd_devices_title"
+      android:entries="@array/empty_array"
+      android:entryValues="@array/empty_array" />
+
+    <ListPreference
+      android:id="@+id/temperature_scale_preference"
+      android:key="@string/temperature_scale_key"
+      android:defaultValue="@string/celsius"
+      android:fontFamily="sans-serif-condensed"
+      android:title="@string/temperature_scale_title"
+      android:entries="@array/temperature_scale_entries"
+      android:entryValues="@array/temperature_scale_values"
+      android:dialogTitle="@string/temperature_scale_title" />
+
+  </PreferenceCategory>
+
+  <PreferenceCategory android:title="Unit system">
+
+    <ListPreference
+      android:id="@+id/metric_preferences"
+      android:key="@string/pref_metric_key"
+      android:defaultValue="@string/metric_system"
+      android:fontFamily="sans-serif-condensed"
+      android:title="@string/metric_system"
+      android:dialogTitle="@string/title_dialog_metric"
+      android:entries="@array/metric_system_entries"
+      android:entryValues="@array/metric_system_values" />
+    android:summary="@string/choose_metrical_system"
+
+  </PreferenceCategory>
+
+</PreferenceScreen>

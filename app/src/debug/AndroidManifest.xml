@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+  <application
+    android:fullBackupContent="@xml/backup_rules"
+    android:label="@string/app_name"
+    android:largeHeap="true"
+    android:name="com.omisoft.hsracer.common.BaseApp"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity
+      android:label="@string/diagnostic_activity"
+      android:name="com.omisoft.hsracer.debug.DebugActivity"
+      android:taskAffinity="com.omisoft.hsracer.DebugActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <receiver
+      android:enabled="true"
+      android:exported="true"
+      android:name="com.omisoft.hsracer.debug.StartupLauncher"
+      android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+        <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+
+    </receiver>
+  </application>
+
+</manifest>

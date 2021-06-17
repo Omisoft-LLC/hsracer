@@ -1,0 +1,581 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "b032ddbd9b78ea97fae0194fe32f086c",
+    "entities": [
+      {
+        "tableName": "Profile",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT, `email` TEXT, `password` TEXT, `alias` TEXT, `firstName` TEXT, `lastName` TEXT, `age` INTEGER, `city` TEXT, `country` TEXT, `rest_id` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "alias",
+            "columnName": "alias",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "firstName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "lastName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "age",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "city",
+            "columnName": "city",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "restId",
+            "columnName": "rest_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Profile_rest_id",
+            "unique": true,
+            "columnNames": [
+              "rest_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Profile_rest_id` ON `${TABLE_NAME}` (`rest_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Car",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT, `manufacturer` TEXT, `alias` TEXT, `model` TEXT, `year` INTEGER NOT NULL, `engineCylinders` TEXT, `volume` TEXT, `hpr` INTEGER NOT NULL, `fuel` TEXT, `profile_id` INTEGER, `rest_id` INTEGER, `vehicleType` TEXT, FOREIGN KEY(`profile_id`) REFERENCES `Profile`(`_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "manufacturer",
+            "columnName": "manufacturer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "alias",
+            "columnName": "alias",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "model",
+            "columnName": "model",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "year",
+            "columnName": "year",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "engineCylinders",
+            "columnName": "engineCylinders",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "volume",
+            "columnName": "volume",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hpr",
+            "columnName": "hpr",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fuel",
+            "columnName": "fuel",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "profileId",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "restId",
+            "columnName": "rest_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "vehicleType",
+            "columnName": "vehicleType",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Car_profile_id",
+            "unique": false,
+            "columnNames": [
+              "profile_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Car_profile_id` ON `${TABLE_NAME}` (`profile_id`)"
+          },
+          {
+            "name": "index_Car_rest_id",
+            "unique": false,
+            "columnNames": [
+              "rest_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Car_rest_id` ON `${TABLE_NAME}` (`rest_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Profile",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "profile_id"
+            ],
+            "referencedColumns": [
+              "_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "Race",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, `description` TEXT, `shareUrl` TEXT, `raceType` TEXT, `raceDistance` INTEGER, `raceTimeInMills` INTEGER, `car_id` INTEGER, `finishPosition` INTEGER, `rest_id` INTEGER, `profile_id` INTEGER, `race__id` INTEGER, `race_currentTime` INTEGER, `race_latitude` REAL, `race_longitude` REAL, `race_gpsSpeed` INTEGER, `race_gpsDistance` INTEGER, `race_gpsAcceleration` INTEGER, `race_obdRpm` INTEGER, `race_obdSpeed` INTEGER, `race_race_id` INTEGER, `race_rest_id` INTEGER, `videoURL` TEXT, `md5` TEXT, `fileSize` INTEGER, `meanSpeed` INTEGER, `maxSpeed` INTEGER, `totalDistance` INTEGER, FOREIGN KEY(`profile_id`) REFERENCES `Profile`(`_id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`car_id`) REFERENCES `Car`(`_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "shareUrl",
+            "columnName": "shareUrl",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceType",
+            "columnName": "raceType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceDistance",
+            "columnName": "raceDistance",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceTimeInMills",
+            "columnName": "raceTimeInMills",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "carId",
+            "columnName": "car_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "finishPosition",
+            "columnName": "finishPosition",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "restId",
+            "columnName": "rest_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "profile_id",
+            "columnName": "profile_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.id",
+            "columnName": "race__id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.currentTime",
+            "columnName": "race_currentTime",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.latitude",
+            "columnName": "race_latitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.longitude",
+            "columnName": "race_longitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.gpsSpeed",
+            "columnName": "race_gpsSpeed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.gpsDistance",
+            "columnName": "race_gpsDistance",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.gpsAcceleration",
+            "columnName": "race_gpsAcceleration",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.obdRpm",
+            "columnName": "race_obdRpm",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.obdSpeed",
+            "columnName": "race_obdSpeed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.raceId",
+            "columnName": "race_race_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceLocation.restId",
+            "columnName": "race_rest_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "videoData.videoURL",
+            "columnName": "videoURL",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "videoData.md5",
+            "columnName": "md5",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "videoData.fileSize",
+            "columnName": "fileSize",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "carTelemetry.meanSpeed",
+            "columnName": "meanSpeed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "carTelemetry.maxSpeed",
+            "columnName": "maxSpeed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "carTelemetry.totalDistance",
+            "columnName": "totalDistance",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Race_profile_id",
+            "unique": false,
+            "columnNames": [
+              "profile_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Race_profile_id` ON `${TABLE_NAME}` (`profile_id`)"
+          },
+          {
+            "name": "index_Race_car_id",
+            "unique": false,
+            "columnNames": [
+              "car_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Race_car_id` ON `${TABLE_NAME}` (`car_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Profile",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "profile_id"
+            ],
+            "referencedColumns": [
+              "_id"
+            ]
+          },
+          {
+            "table": "Car",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "car_id"
+            ],
+            "referencedColumns": [
+              "_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "RACE_DATA",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT, `currentTime` INTEGER, `latitude` REAL, `longitude` REAL, `gpsSpeed` INTEGER, `gpsDistance` INTEGER, `gpsAcceleration` INTEGER, `obdRpm` INTEGER, `obdSpeed` INTEGER, `race_id` INTEGER, `rest_id` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "currentTime",
+            "columnName": "currentTime",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gpsSpeed",
+            "columnName": "gpsSpeed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gpsDistance",
+            "columnName": "gpsDistance",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gpsAcceleration",
+            "columnName": "gpsAcceleration",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "obdRpm",
+            "columnName": "obdRpm",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "obdSpeed",
+            "columnName": "obdSpeed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceId",
+            "columnName": "race_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "restId",
+            "columnName": "rest_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_RACE_DATA_race_id",
+            "unique": false,
+            "columnNames": [
+              "race_id"
+            ],
+            "createSql": "CREATE  INDEX `index_RACE_DATA_race_id` ON `${TABLE_NAME}` (`race_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "OBD_DATA",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT, `time` INTEGER, `speed` INTEGER, `rpm` INTEGER, `race_id` INTEGER, `rest_id` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "time",
+            "columnName": "time",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "speed",
+            "columnName": "speed",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rpm",
+            "columnName": "rpm",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "raceId",
+            "columnName": "race_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "restId",
+            "columnName": "rest_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_OBD_DATA_race_id",
+            "unique": false,
+            "columnNames": [
+              "race_id"
+            ],
+            "createSql": "CREATE  INDEX `index_OBD_DATA_race_id` ON `${TABLE_NAME}` (`race_id`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"b032ddbd9b78ea97fae0194fe32f086c\")"
+    ]
+  }
+}

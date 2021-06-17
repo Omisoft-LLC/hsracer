@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/start_race_linear_layout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <include
+    android:id="@+id/race_title"
+    layout="@layout/title_race_layout" />
+
+  <ScrollView
+    android:id="@+id/race_panel_2"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_alignParentRight="true"
+    android:layout_below="@id/race_title"
+    android:background="@color/colorRed">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/rpm_info"
+        style="@style/infoTextRace"
+        android:text="@string/rpm_race" />
+
+      <TextView
+        android:id="@+id/rpm_text_view"
+        style="@style/raceTextViews" />
+
+      <TextView
+        android:id="@+id/current_speed_info"
+        style="@style/infoTextRace"
+        android:text="@string/speed_race" />
+
+      <TextView
+        android:id="@+id/current_speed_text_view"
+        style="@style/raceTextViews" />
+
+      <TextView
+        android:id="@+id/current_obd_speed_info"
+        style="@style/infoTextRace"
+        android:text="@string/obd_speed_race" />
+
+      <TextView
+        android:id="@+id/current_obd_speed_text_view"
+        style="@style/raceTextViews" />
+
+      <TextView
+        android:id="@+id/acceleration_info"
+        style="@style/infoTextRace"
+        android:text="@string/acceleration_race" />
+
+      <TextView
+        android:id="@+id/acceleration_text_view"
+        style="@style/raceTextViews" />
+
+      <TextView
+        android:id="@+id/engine_temperature_info"
+        style="@style/infoTextRace"
+        android:text="@string/temperature_engine" />
+
+      <TextView
+        android:id="@+id/engine_temperature_text_view"
+        style="@style/raceTextViews" />
+
+      <TextView
+        android:id="@+id/current_time_info"
+        style="@style/infoTextRace"
+        android:text="@string/time_race" />
+
+      <Chronometer
+        android:id="@+id/current_time_text_view"
+        style="@style/raceTextViews"
+        android:format="@string/_00_00_00" />
+
+      <TextView
+        android:id="@+id/distance_info"
+        style="@style/infoTextRace"
+        android:text="@string/distance_race" />
+
+      <TextView
+        android:id="@+id/distance_text_view"
+        style="@style/raceTextViews" />
+    </LinearLayout>
+  </ScrollView>
+
+
+  <RelativeLayout
+    android:id="@+id/race_panel_1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@id/race_title"
+    android:layout_toLeftOf="@+id/race_panel_2"
+    android:layout_toStartOf="@+id/race_panel_2"
+    android:background="@color/colorBlack">
+
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <RelativeLayout
+        android:id="@+id/map_panel_in_race_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <org.osmdroid.views.MapView
+          android:id="@+id/map_in_race_activity"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+        <ImageView
+          android:id="@+id/image_show_camera"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:layout_margin="8dp"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentTop="true"
+          android:contentDescription="@string/cameraImageDescription"
+          android:onClick="buttonShowCamera"
+          app:srcCompat="@drawable/ic_camera" />
+
+      </RelativeLayout>
+
+      <RelativeLayout
+        android:id="@+id/camera_panel_in_race_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--<SurfaceView-->
+        <!--android:id="@+id/frame_layout_race"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+        <ImageView
+          android:id="@+id/image_show_map"
+          android:layout_width="48dp"
+          android:layout_height="48dp"
+          android:layout_margin="8dp"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentTop="true"
+          android:contentDescription="@string/mapImageDescription"
+          android:onClick="buttonShowMap"
+          android:visibility="gone"
+
+          app:srcCompat="@drawable/ic_google_maps" />
+
+      </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+      android:id="@+id/count_down_text_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fontFamily="sans-serif-condensed"
+      android:gravity="center"
+      android:textColor="@android:color/white"
+      android:textSize="100sp" />
+
+    <Button
+      android:id="@+id/start_race_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="14dp"
+      android:layout_alignParentBottom="true"
+      android:background="@drawable/button_start_finish"
+      android:onClick="startAndStopRace"
+      android:text="@string/go"
+      android:textColor="@color/colorWhite"
+      android:textSize="22sp" />
+  </RelativeLayout>
+</RelativeLayout>

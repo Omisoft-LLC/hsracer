@@ -1,0 +1,333 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <string name="app_name">HSRacer</string>
+  <!--Strings related to Login and Register-->
+  <string name="no_internet_connection">No internet connection</string>
+  <string name="empty_field_email">Empty field email</string>
+  <string name="empty_field_password">Empty field Password</string>
+  <string name="empty_field_repeat_password">Empty field Repeat password</string>
+  <string name="password_fields_does_not_match">Password fields do not match</string>
+  <string name="not_correct_email">The email is not valid</string>
+  <string name="error_json">Server is offline. Please connect later!</string>
+  <string name="email">Email</string>
+  <string name="password">Password</string>
+  <string name="repeat_password">Repeat password</string>
+  <string name="login">Sign in</string>
+  <string name="register">Not a member? Sign up now.</string>
+  <string name="sign_up"> Sign up</string>
+  <string name="empty_field_nickname">Empty nickname</string>
+
+  <!-- Strings related to activity_home.xml -->
+  <string name="create_race">Create race</string>
+  <string name="join_race">Join race</string>
+  <string name="see_results">View results</string>
+  <string name="view_streams">View streams</string>
+  <string name="hsracer_requires_gps">HSRacer requires location permission for gps!</string>
+
+  <!-- Strings related to activity_race.xml -->
+  <string name="wifi" translatable="false">wifi</string>
+  <string name="sensor">sensor</string>
+
+  <string name="countdown_var" translatable="false">%d</string>
+  <string name="acceleration_var">%d m/s2</string>
+  <string name="current_speed_var">%d km/h</string>
+  <string name="distance_var">%d m</string>
+  <string name="distance_km_var">%s km</string>
+  <string name="rpm_var"> %d rpm</string>
+  <string name="temp_celsius_var" translatable="false"> %d °C</string>
+
+  <string name="_00_00_00" translatable="false">00:00:00</string>
+  <string name="acceleration_var_imperial" translatable="false">%d ft/s2</string>
+  <string name="current_speed_var_imperial" translatable="false">%d ml/h</string>
+  <string name="distance_var_imperial" translatable="false">%d ft</string>
+  <string name="distance_miles_var_imperial" translatable="false">%s ml</string>
+  <string name="temp_fahrenheit_var" translatable="false"> %d °F</string>
+
+  <string name="abbreviation_milliseconds" translatable="false">ms</string>
+  <string name="abbreviation_seconds" translatable="false">s</string>
+  <string name="abbreviation_minutes">min</string>
+  <string name="abbreviation_hours">hrs</string>
+
+  <string name="na" translatable="false">N/A</string>
+
+  <string name="time_race">Time:</string>
+  <string name="speed_race">GPS speed:</string>
+  <string name="obd_speed_race">OBD speed:</string>
+  <string name="acceleration_race">Acceleration:</string>
+  <string name="temperature_engine">Engine temp:</string>
+  <string name="distance_race">Distance:</string>
+  <string name="rpm_race" translatable="false">RPM:</string>
+  <string name="message_to_canceled_user">Please wait for the race to finish</string>
+  <string name="are_you_sure_race">Warning!</string>
+  <string name="are_you_sure_leave_race_creator">Are you sure you want to quit the race? The race will be cancelled!</string>
+  <string name="are_you_sure_stop_race_racer">Do you want to stop the race?</string>
+  <string name="finish_countdown">Wait until the countdown finishes</string>
+  <string name="race_in_progress">The race is still in progress.</string>
+
+  <!--Strings related to race_summary_activity-->
+  <string name="alias">Alias</string>
+  <string name="car">Car</string>
+  <string name="time">Time</string>
+  <string name="status">Status</string>
+  <string name="position">Position</string>
+
+  <!--Strings related to activity_results.xml and activity_results_details-->
+  <string name="empty_list">No previous results</string>
+  <string name="result_details_description">Description</string>
+  <string name="result_details_date">Date</string>
+  <string name="result_details_type">Type</string>
+  <string name="result_details_time">Time</string>
+  <string name="result_details__max_speed">Max speed</string>
+  <string name="result_details_distance">Distance</string>
+
+  <!-- Strings related to Drawer-->
+  <string name="profile_or_logo_image">Profile or Logo image</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="logout_from_app">Are you sure that you want to logout from the application?</string>
+  <string name="cars">Cars</string>
+  <string name="home">Home</string>
+  <string name="profile">Profile</string>
+  <string name="title_activity_buddy_finder" translatable="false">BuddyFinder</string>
+  <string name="settings">Settings</string>
+  <string name="help">Help</string>
+  <string name="visit_site">Visit site</string>
+  <string name="logout">Logout</string>
+
+
+  <!-- Strings related to activity_personal_information -->
+  <string name="nickname">Nickname</string>
+  <string name="first_name_text_view_string">First name</string>
+  <string name="last_name_text_view_string">Last name</string>
+  <string name="age_text_view_string">Age</string>
+  <string name="city_text_view_string">City</string>
+  <string name="country_text_view_string">Country</string>
+  <string name="age_number_too_high">Please correct the age field</string>
+
+  <!-- Strings relatedactivity_save_car_to_profilefile  and DetailsCarActivity-->
+  <string name="select_vehicle_make">Vehicle make</string>
+  <string name="select_type_of_vehicle">Type of vehicle</string>
+  <string name="warning_please_select_make">Please select make</string>
+  <string name="warning_please_select_model">Please select model</string>
+  <string name="select_car_model">Model</string>
+  <string name="select_car_year">Select year</string>
+  <string name="car_engine_volume">Engine volume</string>
+  <string name="car_bhp" translatable="false">BHP</string>
+  <string name="select_car_fuel">Select fuel</string>
+  <string name="save_car">Save car</string>
+  <string name="car_engine_cylinders">Select engine cylinders</string>
+  <string name="details_car_year_label">Year</string>
+  <string name="details_car_fuel_label">Fuel</string>
+  <string name="details_car_engine_cylinders_label">Engine cylinders</string>
+  <string name="details">Details</string>
+  <string name="statistics">Statistics</string>
+  <string name="edit_big">EDIT</string>
+
+  <!-- Strings related to preRaceSummary -->
+  <string name="race_distance">Race distance</string>
+  <string name="ready_to_race">Ready to race</string>
+  <string name="remove">REMOVE</string>
+  <string name="ready">Ready</string>
+  <string name="not_ready">Not ready</string>
+  <string name="kicked_from_race">You are kicked from the race</string>
+  <string name="status_description">status</string>
+  <string name="share_live_race_page">Share Live Race</string>
+
+  <!-- Strings related to activity_create_race.xml -->
+  <string name="race_name">Race name</string>
+  <string name="default_value_for_number_of_racers" translatable="false">1</string>
+  <string name="race_description">Race description</string>
+  <string name="alias_text_view_string">Car name</string>
+  <string name="my_car">Select a car to race with</string>
+  <string name="number_of_opponents">Number of racers</string>
+  <string name="race_type">Race type</string>
+  <string name="top_speed">Top speed</string>
+  <string name="record_video">Record video</string>
+  <string name="roll_metric_speed" translatable="false"> km/h</string>
+  <string name="roll_imperial_speed" translatable="false"> mi/h</string>
+  <string name="set_distance_meters">Alert: The distance is in metres</string>
+  <string name="set_distance_foots">Alert: The distance is in feet</string>
+  <string name="alert_maximum_8_players">Alert: Maximum 8 players (1 by default)</string>
+  <string name="camera_permission">You have to enable the camera permission</string>
+  <string name="write_to_external_storage_permission">You have to enable the permission for writing on the external storage </string>
+  <string name="please_fill_distance">Please fill distance</string>
+  <string name="too_long_distance">Distance is too long</string>
+  <string name="end_speed_too_high">Top speed is too high</string>
+  <string name="start_end_warning">Top speed cannot be 0</string>
+  <string name="too_many_racers">Maximum number of racers is 8</string>
+  <string name="not_enough_racers">At least 1 racer needs to participate</string>
+  <string name="fill_all_fields">Please fill all fields</string>
+
+  <!-- Strings related to activity_join_race.xml -->
+  <string name="race_id">Race ID</string>
+  <string name="enter_raceId">Please, enter race ID</string>
+  <string name="join_race_notification">Invitation from %s?</string>
+  <string name="join_race_now">JOIN</string>
+  <string name="invitation_message">Racer with name %s is inviting you to join his race \"%s\". Do you want to participate?</string>
+
+  <!-- Strings related to activity_pre_race_summary.xml -->
+  <string name="total_racers">Total racers</string>
+  <string name="pre_race_summary_car">Car</string>
+  <string name="joiner_warning_message">- If you have joined the race, you will be disconnected</string>
+  <string name="race_canceled">Race cancelled by creator!</string>
+
+  <!--Strings related to activity_cannonball-->
+  <string name="choose_destination">Choose race destination</string>
+  <string name="set_destination">I am done</string>
+  <string name="no_address_found">No address found!</string>
+  <string name="no_osm_server">OSM server is down.Try again</string>
+  <string name="enter_destination">Enter address</string>
+  <string name="please_choose_finish_destination">Please, choose finish destination</string>
+  <string name="finish_location">Finish location: %s</string>
+  <string name="finish_location_with_coordinates">Finish location: %s (%f, %f)</string>
+
+  <!-- String related to settings -->
+  <string name="action_settings">Settings</string>
+
+  <string name="resolution_title">Video quality</string>
+  <string name="resolution_dialog_title">Resolution:</string>
+  <string name="video">Video settings</string>
+
+  <string name="title_dialog_metric">System of measurement:</string>
+  <string name="metric_system">Metric</string>
+  <string name="imperial_system">Imperial</string>
+
+  <string name="obd_settings">OBD settings</string>
+  <string name="obd_title">Enable OBD functionality</string>
+  <string name="obd_summary_off">OBD functionality is OFF</string>
+  <string name="obd_summary_on">OBD functionality is ON</string>
+  <string name="obd_devices_title">Pair with OBD device</string>
+
+  <string name="temperature_scale_title">Engine temperature scale:</string>
+  <string name="celsius">Celsius</string>
+
+
+  <string name="bluetooth_disabled_disclaimer">Please enable bluetooth</string>
+  <string name="no_paired_devices">No paired devices were found, please pair an OBD device in settings</string>
+  <string name="no_obd_device_paired">Device not paired</string>
+  <string name="obd_device_paired">Device paired</string>
+
+  <!-- String related to BuddyFinder -->
+  <string name="joined" translatable="false">Joined the hunt</string>
+  <string name="need_car">You must add car to race</string>
+  <string name="update">Update</string>
+  <string name="go">GO</string>
+  <string name="no_cars">No cars have been added yet</string>
+  <string name="end_race">STOP</string>
+
+  <!-- String related to activity_share_race_data.xml -->
+  <string name="share_race_title">Share results</string>
+  <string name="car_publish">Car</string>
+  <string name="alias_publish">Car alias</string>
+  <string name="position_publish">Position</string>
+  <string name="race_time_publish">Race time:</string>
+  <string name="max_speed_publish">Maximum speed</string>
+  <string name="avg_speed_publish">Average speed</string>
+  <string name="share_to_facebook">Share results to Facebook</string>
+  <string name="where_to_share">Please select where you want to share your results to</string>
+
+  <!-- String related to activity_upload_video.xml and activity_upload_video_gallery -->
+  <string name="upload_video">Upload video</string>
+  <string name="upload">Upload</string>
+  <string name="upload_now">UPLOAD NOW</string>
+  <string name="such_file_does_not_exist">Such file does not exist %s!</string>
+  <string name="upload_video_message_warning">You are using data! Would you like to upload your videos now or later from the gallery when a wi-fi connection is established?</string>
+  <string name="upload_video_message_warning_from_gallery">You are using data! Would you like to upload your videos?</string>
+  <string name="please_select_videos">Please select videos</string>
+  <string name="all_videos_uploaded">All videos are set for uploading already</string>
+  <string name="currently_you_are_using_mobile_data">Currently you are using mobile data!</string>
+  <string name="title_activity_upload_video">Upload Video to HSRacer</string>
+  <string name="uploading">Uploading</string>
+  <string name="number_of_uploading_files"> uploading %d files</string>
+  <string name="upload_complete"> Uploading completed</string>
+  <string name="upload_failed"> Uploading failed</string>
+  <string name="current_file_state">Uploaded %d/%d</string>
+  <string name="please_wait_while_uploading">Please wait…</string>
+
+  <!--Strings related to error_activity-->
+  <string name="send_log_dev">Send Error to developers</string>
+  <string name="relaunch_app">Restart app</string>
+
+  <!--Manifest strings-->
+  <string name="login_title">Login</string>
+  <string name="add_car_to_profile">Save car</string>
+  <string name="asset_statements" translatable="false">[{\n  \"relation\": [\"delegate_permission/common.handle_all_urls\"],\n  \"target\": {\n    \"namespace\": \"web\",\n    \"site\": \"https://hsracer.com\",\n  }\n}]</string>
+
+  <!--Main activity strings-->
+  <string name="attempting_to_login_please_wait">Attempting to login. Please wait!</string>
+  <string name="agree">AGREE</string>
+  <string name="legal_disclaimer" translatable="false">
+        <![CDATA[
+        Please agree to our <a href="https://hsracer.com/dist/pages/terms.html">Terms &amp; Conditions</a>
+        ]]>
+    </string>
+
+  <!--Used by more than one activity-->
+  <string name="share">Share</string>
+  <string name="return_home">Home</string>
+  <string name="okay" translatable="false">ок</string>
+  <string name="cancel">Cancel</string>
+  <string name="save_caps">SAVE</string>
+  <string name="cancel_caps" tools:ignore="ButtonCase">CANCEL</string>
+  <string name="must_grant_gps">You must grant GPS to use the app!!!</string>
+  <string name="gps_not_enable">GPS is not enabled. Do you want to go to settings menu?</string>
+  <string name="get_obd_data">Live OBD data</string>
+
+  <!--Server related strings-->
+  <string name="server_error">Server Error! Please, try again later!</string>
+  <string name="server_error_authorization">You are not authorized. Please login again.</string>
+
+  <!--Firebase related stuff-->
+  <string name="race_video_available">Race video available at:</string>
+  <string name="press_watch">Press to watch!</string>
+
+  <!--Strings related to the Service -->
+  <string name="click_to_open">Click to open HSRacer</string>
+  <string name="error_permissions">Please give the app sufficient permissions to use!</string>
+  <string name="error_low_memory">Video recording stopped! Memory is too low!</string>
+
+  <!--Data base Strings-->
+  <string name="error_db">Database Error</string>
+
+  <!--Other Strings-->
+  <string name="error_generic">Generic Error</string>
+  <string name="exit">Exit</string>
+
+  <!--ProgressBar strings -->
+  <string name="please_wait">Please wait…</string>
+
+  <!--Descriptions for images-->
+  <string name="cameraImageDescription">Switch to camera</string>
+  <string name="mapImageDescription">Show map</string>
+  <string name="sensorForCamera" translatable="false">Sensor for camera</string>
+  <string name="sensorForGPS" translatable="false">Sensor for GPS</string>
+  <string name="sensorForOBD" translatable="false">Sensor for OBD</string>
+  <string name="race_creator">Race Creator</string>
+
+  <!--SOON-->
+  <string name="coming_soon">Coming Soon</string>
+
+  <!--transitions-->
+  <string name="transition_name" translatable="false">name</string>
+  <string name="transition_race_place" translatable="false">racePlace</string>
+  <string name="transition_car_name" translatable="false">car_name</string>
+  <string name="transition_make_and_model" translatable="false">transition_car_make_and_model</string>
+  <string name="error_playback" translatable="false">cant_turn_playback</string>
+  <string name="my_awesome_race">My awesome race.</string>
+  <string name="trying_to_reach_1km_for_less_than_20sec">Trying to reach 1km for less than 20sec.</string>
+  <string name="finishing_places">Finishing places</string>
+  <string name="start_streaming">Start Streaming</string>
+  <string name="stream_video">Stream Video</string>
+  <string name="legal_note">Street racing is illegal in most countries. Use this app only for legal activities</string>
+  <string name="test_stream_debug" translatable="false">Test Streams (Debug)</string>
+  <string name="watch_race_live">Watch my race live</string>
+  <string name="watch_race">Watch race live at:%s</string>
+  <string name="empty_streams_list">No streams currently available</string>
+  <string name="creator_warning_message">-If you are the creator you will stop the race</string>
+  <string name="are_you_sure_leave_race_racer">Are you sure you want to leave the race?</string>
+  <string translatable="false" name="play_button">Play</string>
+  <string translatable="false" name="stop_button">Stop</string>
+
+
+</resources>
+
+

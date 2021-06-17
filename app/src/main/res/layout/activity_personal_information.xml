@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+      android:id="@+id/personal_activity_information_relative_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="16dp"
+      android:orientation="vertical">
+
+
+      <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+        <EditText
+          android:id="@+id/alias"
+          style="@style/editTextStyle"
+          android:hint="@string/nickname"
+          android:inputType="textNoSuggestions" />
+
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+        <EditText
+          android:id="@+id/first_name"
+          style="@style/editTextStyle"
+          android:hint="@string/first_name_text_view_string"
+          android:inputType="textNoSuggestions" />
+
+      </android.support.design.widget.TextInputLayout>
+
+
+      <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+        <EditText
+          android:id="@+id/last_name"
+          style="@style/editTextStyle"
+          android:hint="@string/last_name_text_view_string"
+          android:inputType="textNoSuggestions" />
+
+      </android.support.design.widget.TextInputLayout>
+
+      <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+        <EditText
+          android:id="@+id/age"
+          style="@style/editTextStyle"
+          android:hint="@string/age_text_view_string"
+          android:inputType="number" />
+
+      </android.support.design.widget.TextInputLayout>
+
+
+      <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+        <EditText
+          android:id="@+id/city"
+          style="@style/editTextStyle"
+          android:hint="@string/city_text_view_string"
+          android:inputType="text" />
+
+      </android.support.design.widget.TextInputLayout>
+
+
+      <android.support.design.widget.TextInputLayout style="@style/inputLayoutStyle">
+
+        <AutoCompleteTextView
+          android:id="@+id/countries_autocomplete"
+          style="@style/editTextStyle"
+          android:hint="@string/country_text_view_string" />
+
+      </android.support.design.widget.TextInputLayout>
+
+
+      <Button
+        android:id="@+id/updatePersonalInformationBtn"
+        style="@style/normalButton"
+        android:layout_width="match_parent"
+        android:onClick="updatePersonalInformationButtonClickListener"
+        android:text="@string/update" />
+
+    </LinearLayout>
+
+  </ScrollView>
+  <include layout="@layout/include_progress_overlay" />
+</RelativeLayout>

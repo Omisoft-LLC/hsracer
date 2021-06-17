@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "847322998740",
+    "firebase_url": "https://hsracer-172712.firebaseio.com",
+    "project_id": "hsracer-172712",
+    "storage_bucket": "hsracer-172712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847322998740:android:9cbf8c5f65a4f01f",
+        "android_client_info": {
+          "package_name": "com.omisoft.hsracer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847322998740-v5tbqp359f5fdsv69df5fa8l0jf7hl82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCREexvzYE36vN1Yg6-JjnA4ouBnu6ShqU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

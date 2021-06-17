@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <group android:checkableBehavior="none">
+    <item
+      android:id="@+id/nav_stream_debug"
+      android:icon="@drawable/ic_camera"
+      android:title="@string/test_stream_debug"
+      android:visible="@bool/DEBUG" />
+    <item
+      android:id="@+id/nav_activity_debug"
+      android:icon="@drawable/ic_camera"
+      android:title="@string/test_stream_debug"
+      android:visible="@bool/DEBUG" />
+    <item
+      android:id="@+id/nav_home"
+      android:icon="@drawable/ic_home_black_48dp"
+      android:title="@string/home" />
+    <item
+      android:id="@+id/nav_profile"
+      android:icon="@drawable/ic_person_black_48dp"
+      android:title="@string/profile" />
+    <item
+      android:id="@+id/nav_cars"
+      android:icon="@drawable/ic_drive_eta_black_48dp"
+      android:title="@string/cars" />
+    <item
+      android:id="@+id/nav_buddyfinder"
+      android:icon="@drawable/ic_group_black_48dp"
+      android:title="@string/title_activity_buddy_finder" />
+    <item
+      android:id="@+id/nav_settings"
+      android:icon="@drawable/ic_settings_black_48dp"
+      android:title="@string/settings" />
+    <item
+      android:id="@+id/nav_help"
+      android:icon="@drawable/ic_info_black_48dp"
+      android:title="@string/help" />
+    <item
+      android:id="@+id/nav_website"
+      android:icon="@drawable/ic_public_black_48dp"
+      android:title="@string/visit_site" />
+    <!--<item -->
+    <!--android:id="@+id/nav_webrtc"-->
+    <!--android:title="@string/stream_race"-->
+    <!--android:icon="@drawable/ic_camera"/>-->
+    <item
+      android:id="@+id/nav_logout"
+      android:icon="@drawable/ic_exit_to_app_black_48dp"
+      android:title="@string/logout" />
+    <item
+      android:id="@+id/nav_exit"
+      android:icon="@drawable/ic_power"
+      android:title="@string/exit" />
+  </group>
+
+</menu>

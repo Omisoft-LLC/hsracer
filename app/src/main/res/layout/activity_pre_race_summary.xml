@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:fillViewport="true">
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+
+    <TextView
+      android:id="@+id/pre_race_textView_id"
+      style="@style/textViewLabelStyle"
+      android:text="@string/race_id" />
+
+    <TextView
+      android:id="@+id/race_id_summary"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/pre_race_creator"
+      style="@style/textViewLabelStyle"
+      android:text="@string/race_creator" />
+
+    <TextView
+      android:id="@+id/race_creator_nickname"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/pre_race_textView_total_racers"
+      style="@style/textViewLabelStyle"
+      android:text="@string/total_racers" />
+
+    <TextView
+      android:id="@+id/total_racers_summary"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/pre_race_textView_my_car"
+      style="@style/textViewLabelStyle"
+      android:text="@string/pre_race_summary_car" />
+
+    <TextView
+      android:id="@+id/my_car_summary"
+      style="@style/textViewStyle" />
+
+    <TextView
+      android:id="@+id/pre_race_textView_race_type"
+      style="@style/textViewLabelStyle"
+      android:text="@string/race_type" />
+
+    <TextView
+      android:id="@+id/race_type_summary"
+      style="@style/textViewStyle" />
+
+    <FrameLayout
+      android:id="@+id/race_type_pre_race_summary_frame"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/recycler_view_in_pre_race_summary"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+
+
+    <Button
+      android:id="@+id/share_race_btn"
+      style="@style/normalButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="shareLiveRaceBtnOnClickListener"
+      android:text="@string/share_live_race_page" />
+
+    <Button
+      android:id="@+id/ready_to_race_btn"
+      style="@style/normalButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="readyToRaceBtnOnClickListener"
+      android:text="@string/ready_to_race" />
+  </LinearLayout>
+</ScrollView>

@@ -1,0 +1,4 @@
+-dontoptimize
+-dontskipnonpubliclibraryclasses
+-dontskipnonpubliclibraryclassmembers
+#-verbose

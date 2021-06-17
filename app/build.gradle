@@ -1,0 +1,193 @@
+apply plugin: 'com.android.application'
+apply plugin: "io.franzbecker.gradle-lombok"
+apply plugin: 'com.getkeepsafe.dexcount'
+apply from: "$project.rootDir/script-git-version.gradle"
+
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+
+        applicationId "com.omisoft.hsracer"
+        minSdkVersion 19
+        targetSdkVersion 26
+        multiDexEnabled true
+        versionCode gitVersionCode
+        versionName gitVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        setProperty("archivesBaseName", "HSRacer-$versionName")
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation"                                  :
+                                     "$projectDir/schemas".toString(), eventBusIndex: 'com.omisoft.hsracer.EventBusIndex']
+            }
+        }
+        buildConfigField 'String', 'REVISION', "\"$build_number\""
+        buildConfigField "String", 'BUILD_DATE', "\"$build_date\""
+
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../androidKeys/android-release.jks')
+            storePassword "asdqwe123!@#"
+            keyAlias "android-release-key"
+            keyPassword "asdqwe123!@#"
+            v2SigningEnabled false
+        }
+    }
+    buildTypes {
+
+        release {
+            buildConfigField "boolean", "EspressoTest", "false"
+            buildConfigField "String", 'REST_URL', "\"https://hsracer.com/rest\""
+            buildConfigField "String", 'WS_URL', "\"wss://hsracer.com/ws\""
+            buildConfigField "String", 'RTMP_URL', "\"rtmp://hsracer.com:1935/live/\""
+            buildConfigField "String", 'WEB_URL', "\"https://hsracer.com\""
+
+            resValue "bool", "DEBUG", "false"
+
+            shrinkResources false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            proguardFiles fileTree('proguard').include("*.pro").asList().toArray()
+            debuggable false
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            buildConfigField "boolean", "EspressoTest", "true"
+            buildConfigField "String", 'REST_URL', "\"https://hsracer.omisoft.eu/rest\""
+            buildConfigField "String", 'WS_URL', "\"wss://hsracer.omisoft.eu/ws\""
+            buildConfigField "String", 'RTMP_URL', "\"rtmp://hsracer.omisoft.eu:1935/live/\""
+            buildConfigField "String", 'WEB_URL', "\"https://hsracer.omisoft.eu\""
+            resValue "bool", "DEBUG", "true"
+
+            // Remove for faster builds in debug
+//            shrinkResources false
+//
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt')
+//            proguardFiles fileTree('proguard').include("*.pro").asList().toArray()
+//            zipAlignEnabled true
+        }
+
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+        disable 'TypographyFractions', 'TypographyQuotes'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+    android.defaultConfig.generatedDensities = []
+    android.defaultConfig.vectorDrawables.useSupportLibrary = true
+    dexOptions {
+        jumboMode = true
+
+        javaMaxHeapSize "2g"
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+
+    }
+
+    aaptOptions {
+        additionalParameters "--no-version-vectors"
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:support-v4:27.0.1'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.6@aar') {
+        transitive = true
+    }
+
+
+
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.github.pires:obd-java-api:1.0'
+    compile 'com.facebook.stetho:stetho:1.5.0'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    compile 'com.android.support:design:27.0.1'
+    compile 'com.android.support:support-v13:27.0.1'
+    compile 'com.neovisionaries:nv-websocket-client:2.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.3'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.3'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'io.github.kobakei:ratethisapp:1.2.0'
+    compile 'org.osmdroid:osmdroid-android:5.6.3'
+    compile 'android.arch.persistence.room:runtime:1.0.0'
+    compile 'org.greenrobot:eventbus:3.1.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'com.google.firebase:firebase-messaging:11.4.2'
+    compile 'com.google.firebase:firebase-core:11.4.2'
+    compile 'com.google.android.gms:play-services-location:11.4.2'
+    compile 'com.google.android.gms:play-services-nearby:11.4.2'
+    compile 'com.yakivmospan:scytale:1.0.1'
+    compile 'com.google.android.exoplayer:exoplayer-core:2.6.1'
+    compile 'com.google.android.exoplayer:exoplayer-dash:2.6.1'
+    compile 'com.google.android.exoplayer:exoplayer-hls:2.6.1'
+    compile 'com.google.android.exoplayer:exoplayer-ui:2.6.1'
+//    compile 'org.webrtc:google-webrtc:1.0.20198'
+
+
+    compile group: 'org.bytedeco', name: 'javacv', version: '1.3.3'
+    compile group: 'org.bytedeco', name: 'javacpp', version: '1.3.3'
+
+//    compile group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '3.2.0-1.3', classifier: 'android-arm'
+//    compile group: 'org.bytedeco.javacpp-presets', name: 'opencv', version: '3.2.0-1.3', classifier: 'android-x86'
+    compile group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '3.2.1-1.3', classifier: 'android-arm'
+    compile group: 'org.bytedeco.javacpp-presets', name: 'ffmpeg', version: '3.2.1-1.3', classifier: 'android-x86'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    testCompile group: 'com.github.javafaker', name: 'javafaker', version: '0.14'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestCompile 'com.android.support:support-annotations:26.0.0'
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:3.0.1'
+    androidTestCompile 'org.mockito:mockito-android:2.12.0'
+    androidTestCompile 'com.android.support.test:rules:1.0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-web:3.0.1'
+
+    androidTestCompile("com.android.support.test.espresso:espresso-contrib:2.2.2") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'design'
+
+    }
+
+    androidTestCompile 'com.github.javafaker:javafaker:0.14'
+
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
+    annotationProcessor 'org.projectlombok:lombok:1.16.18'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    provided 'org.projectlombok:lombok:1.16.18'
+    provided 'javax.annotation:jsr250-api:1.0'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    implementation 'com.github.humazed:RoomAsset:v1.0'
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.3'
+
+
+
+}
+apply plugin: 'com.google.gms.google-services'
+
+
